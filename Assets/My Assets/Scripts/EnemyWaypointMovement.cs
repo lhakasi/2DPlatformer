@@ -71,7 +71,8 @@ public class EnemyWaypointMovement : MonoBehaviour
 
     private void Move(Transform target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards
+            (transform.position, target.position, _speed * Time.deltaTime);
 
         if (MoveState != MoveStates.Walk)
         {

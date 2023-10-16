@@ -4,11 +4,11 @@ public class CoinCollector : MonoBehaviour
 {
     [SerializeField] private float _coins = 0;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Coin"))
+        if (collision.TryGetComponent<Coin>(out Coin coin))
         {
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
 
             _coins += 1;
         }
